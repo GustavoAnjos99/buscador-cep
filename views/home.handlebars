@@ -1,0 +1,27 @@
+<div class="bg-secondary-subtle h-100">
+    <div class="container text-center align-middle h-100">
+        <div class="d-block">
+            <h1>BUSCADOR DE CEP</h1>
+        </div>
+        <br>
+        <div>
+            <form action="/cadastrar" method="POST">
+                <label>INFORME O CEP:</label><br>
+                <input id="cep" name="cep" class="border border-black w-50 rounded-pill"><br><br>
+                <button type="submit" class="border border-black rounded-pill">BUSCAR</button>    
+            </form>
+        </div>
+        <br>
+        <div id="infos" class="shadow bg-light rounded-4  justify-content-envely">
+        <p class="col-12">logradouro: {{result.logradouro}}</p>
+            <p class="col-12">Bairro: {{result.bairro}}</p>
+            <p class="col-12">Localidade: {{result.localidade}}</p>
+            <p class="col-12">UF: {{result.uf}}</p>
+            <p class="col-12">IBGE: {{result.ibge}}</p>
+            <p class="col-12">Gia: {{result.gia}}</p>
+            <p class="col-12">DDD: {{result.ddd}}</p>
+            <p class="col-12">Siafi: {{result.siafi}}</p>
+        </div>
+    </div>
+</div>
+
