@@ -1,18 +1,21 @@
-<div class="bg-secondary-subtle h-100">
-    <div class="container text-center align-middle h-100">
+<div class="bg-secondary-subtle" style="height: 100vh;">
+    <div class="container text-center align-middle">
         <div class="d-block">
             <h1>BUSCADOR DE CEP</h1>
         </div>
-        <br>
         <div>
             <form action="/cadastrar" method="POST">
                 <label>INFORME O CEP:</label><br>
-                <input id="cep" name="cep" class="border border-black w-50 rounded-pill"><br><br>
-                <button type="submit" class="border border-black rounded-pill">BUSCAR</button>    
+                <input id="cep" name="cep" class="border border-black w-50 rounded-2"><br><br>
+                <button type="submit" class="border border-black rounded-2 btn">BUSCAR</button>    
             </form>
         </div>
         <br>
-        <div id="infos" class="shadow bg-light rounded-4  justify-content-envely">
+        <div class="shadow bg-danger rounded-2 w-50 mx-auto justify-content-envely" style="color: white;">
+            {{error.MsgErro}}
+        </div>
+        <br>
+        <div id="infos" class="shadow bg-light rounded-2 w-50 mx-auto justify-content-envely p-2">
         <p class="col-12">logradouro: {{result.logradouro}}</p>
             <p class="col-12">Bairro: {{result.bairro}}</p>
             <p class="col-12">Localidade: {{result.localidade}}</p>

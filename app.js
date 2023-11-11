@@ -23,12 +23,10 @@ app.use(bodyParser.json())
 app.get("/", function(req,res){
     res.render("home");
 })
- 
-let infoCep = []
+
 app.post("/cadastrar", function(req, res){
     correios.consultaCEP({ cep: req.body.cep })
     .then(result => {
-        infoCep.push(result);
         db.collection('cadastros').add({
             cep: req.body.cep,
             result
@@ -36,16 +34,13 @@ app.post("/cadastrar", function(req, res){
             console.log('Registro adicionado');
         })
         res.render("home", {result});
-        console.log(infoCep);
+        console.log(result);
     })
     .catch(error => {
         console.log(error);
+        res.render("home", {error});
     });
-
-   
 })
-
-
 
 app.listen(8081, function(){
     console.log("SERVIDOR RODANDO!");
